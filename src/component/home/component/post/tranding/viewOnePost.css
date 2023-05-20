@@ -1,0 +1,37 @@
+.single-post-header{
+    background:rgb(54, 54, 54);
+    align-items:center;
+    display:flex;
+    width:500px;
+    color:white;
+    padding:5px;
+    padding-left:10px;
+}
+.single-post-header p{
+    margin: 0;
+    margin-left: 10px;
+
+}
+.single-post-image{
+    text-align:center;
+    align-items:center;
+    width:100%;
+    margin:auto;
+    min-height:150px;
+}
+.single-post-footer{
+    background:rgb(54, 54, 54);
+    align-items:center;
+    display:flex;
+    width:500px;
+    color:white;
+    padding:5px;
+    
+}
+.single-post-comment{
+ 
+    margin: auto;
+    /* margin-bottom: 10px; */
+    width: 90%;
+    color:white !important;
+}

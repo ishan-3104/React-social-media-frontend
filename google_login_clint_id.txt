@@ -1,0 +1,2 @@
+clint id = 618644845391-cami5t81cf7hma1mh31m1bvo7nqefiqj.apps.googleusercontent.com
+clint secret = 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

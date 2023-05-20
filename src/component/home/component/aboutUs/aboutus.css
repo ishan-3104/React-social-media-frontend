@@ -1,0 +1,19 @@
+.aboutus-container{
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(46, 125, 50, 0.7);
+    border-radius: 10px;
+    height: 100%;
+}
+.aboutus-container h5{
+    color: #2E7D32;
+}
+.aboutus-container p{
+    margin: 0px;
+    font-size: 14px;
+}
+.aboutus-container h6{
+    margin-right: 5px;
+}

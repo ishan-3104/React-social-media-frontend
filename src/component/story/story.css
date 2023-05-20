@@ -1,0 +1,15 @@
+.stroy-container{
+    display: flex;
+    margin-bottom: 15px;
+}
+.story-thumbnail{
+   
+    border:2.5px solid #2E7D32;
+    margin-left: 10px;
+}
+.story-scrollbar-container{
+    margin-left: 20px;
+    display: flex;
+    width: 500px;
+   
+}

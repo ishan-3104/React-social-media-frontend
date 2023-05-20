@@ -1,0 +1,85 @@
+.background{
+    background: linear-gradient(0deg, #E67D53 -1.04%, #FDBD4F 102.34%);
+    height: 690px;
+    font-family: 'Open Sans'
+    
+}
+.signup-container{
+    position: absolute;
+    width: 48%;
+    left: 27%;
+    top: 2%;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.input-feld{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.sign-btn{ 
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #E67D53 -1.04%, #FDBD4F 102.34%);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: large;
+}
+.link-btn{
+   width: 100%;
+   height: 45px;
+   background : '#3A5998';
+   display: flex; 
+  
+}
+.googlelogin{
+   
+    width: 100% !important;
+    margin:'auto';
+    font-size:'18px';
+    background : '#F44235'!important;
+    height:'100%';
+    border-radius: '0px 5px 5px 0px';
+    padding-left: 20px !important;
+    border: 1 solid black !important;
+    
+}
+.ellipse3{
+    position: absolute;
+    Width: 235px;
+    Height: 256px;
+    Top: -100px;
+    Left: 80%;
+}
+.ellipse4{
+    position: absolute;
+    Width: 235px;
+    Height: 256px;
+    top: 55%;
+    Left: -5%;
+}
+
+@media only screen and (max-width: 700px) {
+    .signup-container{
+        position: absolute;
+        width: 60%;
+        left: 22%;
+        top: 10%;
+        background: #FFFFFF;
+        border-radius: 10px;
+    }  
+}
+@media only screen and (max-width: 400px) {
+    .signup-container{
+        position: absolute;
+        width: 85%;
+        left: 7.5%;
+        top: 10%;
+        background: #FFFFFF;
+        border-radius: 10px;
+    }  
+}

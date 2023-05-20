@@ -1,0 +1,37 @@
+.card-Header{
+    display: flex;
+    padding: 20px 20px 0px 15px;
+}
+.card-title{
+    width : 480px;
+    text-align: left;
+    margin-left: 5px;
+}
+.card-title span{
+    margin-right: 15px;
+    font-size: 13px;
+    
+}
+.card-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.like-comment-btn{
+    /* margin-top: 32%; */
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.like-comment-btn p{
+    font-size: 14px;
+    /* padding-left: 10px; */
+    
+}
+.post-card{
+    width: 85%;
+    margin: auto;
+}

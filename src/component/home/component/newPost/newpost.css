@@ -1,0 +1,24 @@
+.add-post-box{
+  text-align: center;
+  
+}
+.upload-image{ 
+    width: 300px;
+    height: 180px;
+    margin: auto ;
+    
+}
+.alt-image-container{
+  /* background-image: url('C:/Users/01/Desktop/social-media/social-media-app/public/images/uploadimage.png'); */
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    width: 300px;
+    height: 180px;
+    background-position: 50% 15px;
+    border: 2px dashed rgb(75, 75, 75);
+    
+}
+.image-container{
+  text-align:left ;
+  margin-left: 10%;
+}

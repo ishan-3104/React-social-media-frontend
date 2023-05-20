@@ -1,0 +1,28 @@
+.comment-box{
+    margin-top: 10px;
+   
+}
+.comment-container{
+    /* border: 1px solid black; */
+    /* width:90%;
+    margin: auto; */
+    border-bottom: 1px solid rgb(163, 163, 163);
+    border-radius: 2px;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 6%;
+
+    
+}
+.comment-time{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
+}
+.send-comment{
+    margin-left: 85%;
+    margin-top: -5.0%;
+    padding-bottom: 20px;
+}

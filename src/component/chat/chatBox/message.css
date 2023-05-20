@@ -1,0 +1,7 @@
+.message-box{
+    height:350px;
+    overflow: auto;
+}
+.message-box::-webkit-scrollbar {
+    display: none;
+}
