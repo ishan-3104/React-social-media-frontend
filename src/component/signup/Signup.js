@@ -7,7 +7,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import GoogleIcon from '@mui/icons-material/Google';
-import { GoogleLogin } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -33,9 +33,9 @@ export default function Signup() {
     }
   },[confirmPassword])
   
-  const onGoogleLogin =(response)=>{
-    console.log(response)
-  }
+  // const onGoogleLogin =(response)=>{
+  //   console.log(response)
+  // }
   
   //--------------SIGNUP------------
   const onSignup=(e)=>{
@@ -134,7 +134,7 @@ export default function Signup() {
             </div>  
           </div><br/>
             
-          <GoogleLogin 
+          {/* <GoogleLogin 
             clientId="618644845391-cami5t81cf7hma1mh31m1bvo7nqefiqj.apps.googleusercontent.com"
             buttonText={<Typography sx={{marginLeft : '70px'}}>LOG IN WITH GOOGLE</Typography>}
             render={ renderProps =>(  
@@ -153,7 +153,7 @@ export default function Signup() {
             onSuccess={onGoogleLogin}
             onFailure={onGoogleLogin}
             cookiePolicy={'single_host_origin'}
-          />
+          /> */}
         </div>
       </div>
     </div>
