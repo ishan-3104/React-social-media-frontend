@@ -18,7 +18,7 @@ export default function Login() {
     
     //---------LOGIN--------------
     const onLogin =()=>{
-        axios.post('http://localhost:5000/auth/login',
+        axios.post('https://socialmediabackend-v5o5.onrender.com/auth/login',
         {
             username:username,
             password:password

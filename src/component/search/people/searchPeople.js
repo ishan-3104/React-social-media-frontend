@@ -11,7 +11,7 @@ export default function SearchPeople() {
 
 
   useEffect(()=>{
-    axios.get('http://localhost:5000/getalluser',
+    axios.get('https://socialmediabackend-v5o5.onrender.com/getalluser',
     {headers:{
       "Authorization":  localStorage.getItem('token')
     }})
@@ -46,7 +46,7 @@ export default function SearchPeople() {
                 localStorage.setItem('searchuser',i.username)
                 navigate('/profile')
                 }} >
-                  <Avatar src={`http://localhost:5000/static/${i.profileImage}`}  alt='profile' sx={{height:'60px',width:'60px',border : ' 3px solid #2E7D32',margin:'5px'}}></Avatar>
+                  <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.profileImage}`}  alt='profile' sx={{height:'60px',width:'60px',border : ' 3px solid #2E7D32',margin:'5px'}}></Avatar>
               </div> 
               <div onClick={()=>{
                 localStorage.setItem('searchuser',i._id)

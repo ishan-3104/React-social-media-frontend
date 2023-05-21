@@ -26,7 +26,7 @@ export default function Home() {
     const [loading, setloading] = useState(true)
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/getalluser/post', {headers:{
+        axios.get('https://socialmediabackend-v5o5.onrender.com/getalluser/post', {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{

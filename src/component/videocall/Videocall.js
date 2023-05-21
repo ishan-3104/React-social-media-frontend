@@ -7,7 +7,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import './videocall.css'
 import { CopyToClipboard } from "react-copy-to-clipboard"
 
-const socket = io.connect('http://localhost:5000')
+const socket = io.connect('https://socialmediabackend-v5o5.onrender.com')
 
 function Videocall() {
     const [ me, setMe ] = useState("")

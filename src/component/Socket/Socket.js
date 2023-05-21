@@ -1,3 +1,3 @@
 import io from 'socket.io-client'
-const ENDPOINT = "http://localhost:5000"
+const ENDPOINT = "https://socialmediabackend-v5o5.onrender.com"
 export default io(ENDPOINT);

@@ -19,7 +19,7 @@ export default function Message({messages}) {
                   || isLastMessage(messages,i,userId))
                   && (
                     <>
-                    <Avatar src={`http://localhost:5000/static/${m.sender.profileImage}`} sx={{height:'30px',width:'30px',border:'2px solid #2E7D32',margin: "5px 0px"}}/>
+                    <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${m.sender.profileImage}`} sx={{height:'30px',width:'30px',border:'2px solid #2E7D32',margin: "5px 0px"}}/>
                     {/* {m.sender.profileImage} */}
                     </>
                   )

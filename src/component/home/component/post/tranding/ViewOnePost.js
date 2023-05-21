@@ -18,7 +18,7 @@ function ViewOnePost({postId}) {
     //---------------LIKE POST-------------
     const likepost =(postid)=>{
         
-        axios.post('http://localhost:5000/likepost',{id:postid,userId:localStorage.getItem('id')},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/likepost',{id:postid,userId:localStorage.getItem('id')},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
@@ -31,7 +31,7 @@ function ViewOnePost({postId}) {
     }
     //-------------SEND NOTIFICATION---------------
     const onSendNotification=(postid,receiver)=>{
-        axios.post('http://localhost:5000/notification/addtonotification',{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/notification/addtonotification',{
             sender:localStorage.getItem('id'),
             receiver:receiver,
             postid:postid,
@@ -57,7 +57,7 @@ function ViewOnePost({postId}) {
 
     useEffect(()=>{
 
-        axios.post('http://localhost:5000/getalluser/singlepost',{postId:postId},{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/singlepost',{postId:postId},{
             headers:{
                 "Authorization":  localStorage.getItem('token')
         }})
@@ -72,15 +72,15 @@ function ViewOnePost({postId}) {
              post.postimage 
              ?(<>
                 <div className='single-post-header'>
-                <Avatar src={`http://localhost:5000/static/${post?.userId?.profileImage}`} sx={{width:'50px',height:'50px',border:'3px solid #2E7D32'}}/>
+                <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${post?.userId?.profileImage}`} sx={{width:'50px',height:'50px',border:'3px solid #2E7D32'}}/>
                 <p>{post?.userId?.username}</p>
                 </div>
                 <div className='single-post-image'>
                     {post?.postimage?.includes('.mp4')
                         ?( <video style={{maxHeight:'416px',maxWidth:'450px'}} loop autoPlay>
-                                <source src={`http://localhost:5000/static/${post.postimage}`} type="video/mp4"/>
+                                <source src={`https://socialmediabackend-v5o5.onrender.com/static/${post.postimage}`} type="video/mp4"/>
                             </video>)
-                        :(<img src={`http://localhost:5000/static/${post.postimage}`}  alt='post' style={{maxHeight:'416px',maxWidth:'450px'}}></img>)
+                        :(<img src={`https://socialmediabackend-v5o5.onrender.com/static/${post.postimage}`}  alt='post' style={{maxHeight:'416px',maxWidth:'450px'}}></img>)
                     }
                     
                 </div>

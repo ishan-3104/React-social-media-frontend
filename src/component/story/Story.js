@@ -18,7 +18,7 @@ function Story() {
    
     useEffect(()=>{
 
-        axios.post('http://localhost:5000/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
             "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{
@@ -26,7 +26,7 @@ function Story() {
             setuserdata(response.data.data[0])})
         .catch((err)=>{console.log('err for geting user data',err)})
         
-        axios.get('http://localhost:5000/story/fatchallstory')
+        axios.get('https://socialmediabackend-v5o5.onrender.com/story/fatchallstory')
         .then((response)=>{
             
             response.data.map((item)=>{
@@ -67,7 +67,7 @@ function Story() {
                 vertical: 'bottom',
                 horizontal: 'right',
             }}>
-            <div onClick={handleAddstory}><Avatar src={`http://localhost:5000/static/${userdata.profileImage}`} sx={{height:'60px',width:'60px',border:'2.5px solid #2E7D32'}} /></div>
+            <div onClick={handleAddstory}><Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${userdata.profileImage}`} sx={{height:'60px',width:'60px',border:'2.5px solid #2E7D32'}} /></div>
             </Badge>
         </div>
         <div className='story-scrollbar-container'>
@@ -77,7 +77,7 @@ function Story() {
                      <div key={index} className='story-scrollbar-box'
                       onClick={()=>seeStory(item.userid,item.username,item.profileImage)}
                       >
-                        <Avatar src={`http://localhost:5000/static/${item.profileImage}`} className='story-thumbnail' sx={{height:'60px',width:'60px'}}/>
+                        <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${item.profileImage}`} className='story-thumbnail' sx={{height:'60px',width:'60px'}}/>
                     </div> 
                 )
             })

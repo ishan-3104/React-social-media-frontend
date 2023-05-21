@@ -13,7 +13,7 @@ function AddStory() {
     formdata.append('userid',localStorage.getItem('id'))
     formdata.append('storyimage',storyimage)
 
-    axios.post('http://localhost:5000/story',formdata,{
+    axios.post('https://socialmediabackend-v5o5.onrender.com/story',formdata,{
       headers:{
           "Authorization":  localStorage.getItem('token')
       }

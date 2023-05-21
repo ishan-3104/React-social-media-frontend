@@ -44,14 +44,14 @@ export default function Notification() {
 
 
    const clearNotification=()=>{
-    axios.post('http://localhost:5000/notification/clearnotification',{receiver:localStorage.getItem('id')})
+    axios.post('https://socialmediabackend-v5o5.onrender.com/notification/clearnotification',{receiver:localStorage.getItem('id')})
     .then(()=>{setflag(!flag)})
     .catch((err)=>{console.log(err)})
    }
    //------------FOLLOW USER----------
     const followUser =(sender)=>{
         console.log('hufhguegwhhiukr');
-        axios.post('http://localhost:5000/follow',{sender:sender,followuser:localStorage.getItem('id')},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/follow',{sender:sender,followuser:localStorage.getItem('id')},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
@@ -59,7 +59,7 @@ export default function Notification() {
             setflag(!flag)
         })
         .catch((err)=>console.log('err',err))
-        axios.post('http://localhost:5000/follow/addtorequest',{userId:sender,followuser:localStorage.getItem('id')},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/follow/addtorequest',{userId:sender,followuser:localStorage.getItem('id')},
             {headers:{
                 "Authorization":  localStorage.getItem('token')
             }})
@@ -68,13 +68,13 @@ export default function Notification() {
     }
     //-----------------DELETE FOLLOWR REQUEST------------
     const onDeleteRequest =(id)=>{
-        axios.post('http://localhost:5000/notification/deleterequest',{id:id})
+        axios.post('https://socialmediabackend-v5o5.onrender.com/notification/deleterequest',{id:id})
         .then(()=>{setflag(!flag)})
         .catch((err)=>{console.log(err)})
     }
 
     useEffect(()=>{
-        axios.post('http://localhost:5000/notification/fatchnotification',{userId:localStorage.getItem('id')},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/notification/fatchnotification',{userId:localStorage.getItem('id')},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }}).then((response)=>{
@@ -106,7 +106,7 @@ export default function Notification() {
                             localStorage.setItem('searchuser',i.sender._id)
                             navigate('/profile')
                             }} >
-                            <Avatar src={`http://localhost:5000/static/${i.sender?.profileImage}`}  alt='profile' sx={{height:'60px',width:'60px',border : ' 2.5px solid #2E7D32',margin:'5px'}}></Avatar>
+                            <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.sender?.profileImage}`}  alt='profile' sx={{height:'60px',width:'60px',border : ' 2.5px solid #2E7D32',margin:'5px'}}></Avatar>
                         </div> 
                         <div
                         style={{textAlign:'left',width:'70%'}}    
@@ -141,7 +141,7 @@ export default function Notification() {
                             localStorage.setItem('searchuser',i.sender._id)
                             navigate('/profile')
                             }} >
-                            <Avatar src={`http://localhost:5000/static/${i?.sender?.profileImage}`}  alt='profile' sx={{height:'60px',width:'60px',border : ' 2.5px solid #2E7D32',margin:'5px'}}></Avatar>
+                            <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i?.sender?.profileImage}`}  alt='profile' sx={{height:'60px',width:'60px',border : ' 2.5px solid #2E7D32',margin:'5px'}}></Avatar>
                         </div> 
                         <div onClick={()=>{
                             localStorage.setItem('searchuser',i.sender._id)
@@ -167,7 +167,7 @@ export default function Notification() {
                             <p style={{fontSize:'13px',fontWeight:600}}>{moment(i.createdAt).startOf('ss').fromNow()}</p>
                         </div>
                         <div>
-                            <img src={`http://localhost:5000/static/${i.postid?.postimage}`} height='80px'width='80px'/>
+                            <img src={`https://socialmediabackend-v5o5.onrender.com/static/${i.postid?.postimage}`} height='80px'width='80px'/>
                         </div> 
                     
                     </Box>

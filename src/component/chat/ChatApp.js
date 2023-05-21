@@ -13,7 +13,7 @@ import animationData from './animation/typing.json'
 import socket from '../Socket/Socket';
 
 
-// const ENDPOINT = "http://localhost:5000"
+// const ENDPOINT = "https://socialmediabackend-v5o5.onrender.com"
 var  selectedChatCompare;
 const user ={
     _id : localStorage.getItem('id'),
@@ -81,7 +81,7 @@ export default function ChatApp() {
 
     const handlechatUser=(value)=>{
         setchatuser(value)
-        axios.post('http://localhost:5000/chat/creatchat',{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/chat/creatchat',{
             userid:localStorage.getItem('id'),
             chatuserid: value._id,
             },
@@ -101,7 +101,7 @@ export default function ChatApp() {
        
         setallmsgFlag(!allmsgFlag)
         socket.emit("stop typing", chatId);
-        axios.post('http://localhost:5000/chat/sendmessage',{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/chat/sendmessage',{
             userid:localStorage.getItem('id'),
             chatId: chatId,
             content: msg
@@ -125,7 +125,7 @@ export default function ChatApp() {
 
 
     useEffect(()=>{
-        axios.post('http://localhost:5000/chat/fetchmessage',{chatId:chatId},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/chat/fetchmessage',{chatId:chatId},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})

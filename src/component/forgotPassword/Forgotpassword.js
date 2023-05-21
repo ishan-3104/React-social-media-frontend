@@ -17,7 +17,7 @@ export default function Forgotpassword() {
     const [errpass, seterrpass] = useState(false)
 
     const onSenotp =()=>{
-        axios.post('http://localhost:5000/forgetpass',{email:email})
+        axios.post('https://socialmediabackend-v5o5.onrender.com/forgetpass',{email:email})
         .then((response)=>{
             console.log(response);
             setverifyemail(true)
@@ -25,7 +25,7 @@ export default function Forgotpassword() {
         .catch((err)=>alert('user not found'))
     }
     const onVerifyOTP = ()=>{
-        axios.post('http://localhost:5000/forgetpass/verifyotp',{otp:otp})
+        axios.post('https://socialmediabackend-v5o5.onrender.com/forgetpass/verifyotp',{otp:otp})
         .then(()=>{
             setverifyemail(false)
             setotpVarify(true)
@@ -38,7 +38,7 @@ export default function Forgotpassword() {
     }
     const onResetpassword =()=>{
         if(password==confirmPassword){
-            axios.post('http://localhost:5000/resetpass',{email:email,password:password})
+            axios.post('https://socialmediabackend-v5o5.onrender.com/resetpass',{email:email,password:password})
             .then((response)=>{
                 console.log('password updated',response)
                 navigate('/login')

@@ -13,7 +13,7 @@ export default function Comment({postId,receiver}) {
     const [morecommentflag, setmorecommentflag] = useState(false)
 
     useEffect(()=>{
-        axios.post('http://localhost:5000/comment/getallcomment',{postId :postId},{headers:{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/comment/getallcomment',{postId :postId},{headers:{
             "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{
@@ -26,7 +26,7 @@ export default function Comment({postId,receiver}) {
     },[commentflaf])
 
     const sendComment =()=>{
-        axios.post('http://localhost:5000/comment',
+        axios.post('https://socialmediabackend-v5o5.onrender.com/comment',
         {
             postId :postId,
             userId : localStorage.getItem('id'),
@@ -41,7 +41,7 @@ export default function Comment({postId,receiver}) {
             setcommentflaf(true)
             console.log(response)
             setcomment('')
-            axios.post('http://localhost:5000/notification/addtonotification',{
+            axios.post('https://socialmediabackend-v5o5.onrender.com/notification/addtonotification',{
                 sender:localStorage.getItem('id'),
                 receiver:receiver,
                 postid:postId,
@@ -83,7 +83,7 @@ export default function Comment({postId,receiver}) {
                 return(
                     <Box className='comment-container'key={index}>
                         <div>
-                                <Avatar src={`http://localhost:5000/static/${i.userId.profileImage}`} sx={{border:'2px solid #2E7D32'}}></Avatar>
+                                <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.userId.profileImage}`} sx={{border:'2px solid #2E7D32'}}></Avatar>
                         </div>
                         <div className='comment-time'>
                                 <div>
@@ -101,7 +101,7 @@ export default function Comment({postId,receiver}) {
                 return(
                     <Box className='comment-container'>
                         <div>
-                                <Avatar src={`http://localhost:5000/static/${i.userId.profileImage}`} sx={{border:'2px solid #2E7D32'}}></Avatar>
+                                <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.userId.profileImage}`} sx={{border:'2px solid #2E7D32'}}></Avatar>
                         </div>
                         <div className='comment-time'>
                                 <div>

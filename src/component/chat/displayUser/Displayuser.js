@@ -16,7 +16,7 @@ export default function Displayuser({handlechatUser}) {
 
 
   useEffect(()=>{
-    axios.get('http://localhost:5000/getalluser',
+    axios.get('https://socialmediabackend-v5o5.onrender.com/getalluser',
     {headers:{
       "Authorization":  localStorage.getItem('token')
     }})
@@ -61,7 +61,7 @@ export default function Displayuser({handlechatUser}) {
               onClick={()=>{handleselectuser(index,i)}}
               
               >
-              <div><Avatar src={`http://localhost:5000/static/${i.profileImage}`}  alt='profile' sx={{height:'40px',width:'40px',border : ' 3px solid #2E7D32',margin:'5px'}}></Avatar></div>
+              <div><Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.profileImage}`}  alt='profile' sx={{height:'40px',width:'40px',border : ' 3px solid #2E7D32',margin:'5px'}}></Avatar></div>
               <div className='dispaly-username-chatbox'>
                   <div>
                     <p style={{fontSize:'18px',fontWeight:500,marginTop:'5px',marginBottom:'0px'}}> @{i.username}</p>

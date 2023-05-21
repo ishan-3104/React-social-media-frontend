@@ -30,7 +30,7 @@ export default function Newpost({handleClose}) {
     formdata.append('caption',caption)
     formdata.append('postimage',postimage)
 
-    axios.post('http://localhost:5000/addpost',formdata,{
+    axios.post('https://socialmediabackend-v5o5.onrender.com/addpost',formdata,{
       headers:{
           "Authorization":  localStorage.getItem('token')
       }

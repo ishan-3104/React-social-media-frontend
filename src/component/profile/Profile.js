@@ -21,7 +21,7 @@ function Profile() {
     const [imageflag, setimageflag] = useState(false)
 
     useEffect(()=>{
-        axios.post('http://localhost:5000/getalluser/userprofile',{userId:userId},{headers:{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/userprofile',{userId:userId},{headers:{
             "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{
@@ -47,7 +47,7 @@ function Profile() {
         formdata.append('profileImage',profileImage)
 
         
-        axios.post('http://localhost:5000/updateprofile',formdata,{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/updateprofile',formdata,{
             headers:{
                 "Authorization":  localStorage.getItem('token')
         }})
@@ -75,7 +75,7 @@ function Profile() {
                     <div className='userProfileImage'>
                         {imageflag
                             ?(<Avatar  src={URL.createObjectURL(profileImage)} sx={{height:'100px',width:'100px',border : '3px solid black'}}></Avatar>)
-                            :(<Avatar src={`http://localhost:5000/static/${userData?.profileImage}`} sx={{height:'100px',width:'100px',border : '3px solid black'}}></Avatar>)
+                            :(<Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${userData?.profileImage}`} sx={{height:'100px',width:'100px',border : '3px solid black'}}></Avatar>)
                         }  
                     </div>
                     <div className='usename-bio'>

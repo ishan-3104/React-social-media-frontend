@@ -49,13 +49,13 @@ export default function DisplayPost() {
     };
 
     useEffect(()=>{
-        axios.post('http://localhost:5000/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
             "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{setuserdata(response.data.data[0]);})
         .catch((err)=>{console.log('err for geting user data',err);})
 
-        axios.post('http://localhost:5000/getalluser/userpost',{userId:userId}, {headers:{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/userpost',{userId:userId}, {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{
@@ -69,7 +69,7 @@ export default function DisplayPost() {
     //------------LIKE POST-----------------
     const likepost =(id)=>{
         setlikebtnColor(!likebtnColor)
-        axios.post('http://localhost:5000/likepost',{id:id,username:userdata.username},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/likepost',{id:id,username:userdata.username},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
@@ -77,7 +77,7 @@ export default function DisplayPost() {
     //------------FOLLOW USER---------------
     const followUser =(followuser)=>{
         setfollowFlag(!followFlag)
-        axios.post('http://localhost:5000/follow',{username:userdata.username,followuser:followuser},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/follow',{username:userdata.username,followuser:followuser},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
@@ -88,7 +88,7 @@ export default function DisplayPost() {
     //-------------DELETE POST--------------
     const onDelete =(id)=>{
         console.log(id);
-        axios.post('http://localhost:5000/updateprofile/deletepost',{id:id},{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/updateprofile/deletepost',{id:id},{
             headers:{
                 "Authorization":  localStorage.getItem('token')
         }})
@@ -109,7 +109,7 @@ export default function DisplayPost() {
                     <div key={index}>
                     <Card>
                         <div className='card-Header'>
-                            <Link to ='/nuser'><Avatar src={`http://localhost:5000/static/${i.profileImage}`} sx={{width:'75px',height:'75px',padding:0,border:'3px solid #2E7D32'}}></Avatar></Link>
+                            <Link to ='/nuser'><Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.profileImage}`} sx={{width:'75px',height:'75px',padding:0,border:'3px solid #2E7D32'}}></Avatar></Link>
                             <div className='card-title'>
                                 <Typography  sx={{fontSize:'19px' ,fontWeight:600}}>{i.caption}</Typography>
                                 <span>{i.username}</span>
@@ -127,9 +127,9 @@ export default function DisplayPost() {
                                     <div>
                                         {i.postimage.includes('.mp4')
                                             ?( <video width="330" height="416" controls >
-                                                    <source src={`http://localhost:5000/static/${i.postimage}`} type="video/mp4"/>
+                                                    <source src={`https://socialmediabackend-v5o5.onrender.com/static/${i.postimage}`} type="video/mp4"/>
                                                 </video>)
-                                            :(<img src={`http://localhost:5000/static/${i.postimage}`} height='416px' width='330px' alt='post' style={{borderRadius:'10px'}}></img>)
+                                            :(<img src={`https://socialmediabackend-v5o5.onrender.com/static/${i.postimage}`} height='416px' width='330px' alt='post' style={{borderRadius:'10px'}}></img>)
                                         }
                                         { 
                                             commentflafID==i._id &&
@@ -221,10 +221,10 @@ export default function DisplayPost() {
                         ?( <video 
                         style={{maxHeight:'220px',maxWidth:'310px'}} 
                         controls>
-                                <source src={`http://localhost:5000/static/${item.postimage}`} type="video/mp4"/>
+                                <source src={`https://socialmediabackend-v5o5.onrender.com/static/${item.postimage}`} type="video/mp4"/>
                             </video>)
                         :( <img
-                            src={`http://localhost:5000/static/${item.postimage}`}
+                            src={`https://socialmediabackend-v5o5.onrender.com/static/${item.postimage}`}
                             style={{height:'220px',widht:'250px'}}
                         />)
                         }

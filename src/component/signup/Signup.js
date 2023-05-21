@@ -42,7 +42,7 @@ export default function Signup() {
 
     if(password==confirmPassword){
 
-      axios.post('http://localhost:5000/auth/signin',
+      axios.post('https://socialmediabackend-v5o5.onrender.com/auth/signin',
       {
         username:username,
         email:email,

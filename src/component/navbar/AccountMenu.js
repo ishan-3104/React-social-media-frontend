@@ -46,7 +46,7 @@ export default function AccountMenu() {
       
 
     React.useEffect(()=>{
-      axios.post('http://localhost:5000/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
+      axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
           "Authorization":  localStorage.getItem('token')
         }})
         .then((response)=>{
@@ -88,7 +88,7 @@ export default function AccountMenu() {
               aria-expanded={open ? 'true' : undefined}
             >
               <Badge color="success" badgeContent="" overlap="circular">
-              <Avatar src={`http://localhost:5000/static/${userdata?.profileImage}`} sx={{ width: 65, height: 65 }}></Avatar>
+              <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${userdata?.profileImage}`} sx={{ width: 65, height: 65 }}></Avatar>
               </Badge>
             </IconButton>
           </Tooltip>

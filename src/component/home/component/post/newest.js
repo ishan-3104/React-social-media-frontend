@@ -15,7 +15,7 @@ import io from 'socket.io-client'
 import { useSelector } from 'react-redux';
 
 
-const ENDPOINT = "http://localhost:5000"
+const ENDPOINT = "https://socialmediabackend-v5o5.onrender.com"
 var socket;
 
 
@@ -40,7 +40,7 @@ export default function Newest() {
     //---------------LIKE POST-------------
     const likepost =(postid)=>{
         
-        axios.post('http://localhost:5000/likepost',{id:postid,userId:localStorage.getItem('id')},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/likepost',{id:postid,userId:localStorage.getItem('id')},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
@@ -54,7 +54,7 @@ export default function Newest() {
     }
     //---------------FOLLOW USER--------------
     const followUser =(followuser)=>{
-        axios.post('http://localhost:5000/follow',{sender:localStorage.getItem('id'),followuser:followuser},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/follow',{sender:localStorage.getItem('id'),followuser:followuser},
         {headers:{
             "Authorization":  localStorage.getItem('token')
         }})
@@ -71,7 +71,7 @@ export default function Newest() {
     }
     //-------------SEND NOTIFICATION---------------
     const onSendNotification=(postid,receiver)=>{
-        axios.post('http://localhost:5000/notification/addtonotification',{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/notification/addtonotification',{
             sender:localStorage.getItem('id'),
             receiver:receiver,
             postid:postid,
@@ -92,7 +92,7 @@ export default function Newest() {
     }
     //-------------SEND FOLLOW REQUEST--------------------------
     const onFollowrequest =(receiver)=>{
-        axios.post('http://localhost:5000/notification/addtonotification',{
+        axios.post('https://socialmediabackend-v5o5.onrender.com/notification/addtonotification',{
             sender:localStorage.getItem('id'),
             receiver:receiver,
            
@@ -110,7 +110,7 @@ export default function Newest() {
             })
         .catch((err)=>{console.log(err)})
 
-        axios.post('http://localhost:5000/follow/addtorequest',{userId:localStorage.getItem('id'),followuser:receiver},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/follow/addtorequest',{userId:localStorage.getItem('id'),followuser:receiver},
             {headers:{
                 "Authorization":  localStorage.getItem('token')
             }})
@@ -123,7 +123,7 @@ export default function Newest() {
     }
 
     const onClacelRequest =(receiver)=>{
-        axios.post('http://localhost:5000/follow/addtorequest',{userId:localStorage.getItem('id'),followuser:receiver},
+        axios.post('https://socialmediabackend-v5o5.onrender.com/follow/addtorequest',{userId:localStorage.getItem('id'),followuser:receiver},
             {headers:{
                 "Authorization":  localStorage.getItem('token')
             }})
@@ -135,7 +135,7 @@ export default function Newest() {
     }
     useEffect(()=>{
             
-            axios.post('http://localhost:5000/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
+            axios.post('https://socialmediabackend-v5o5.onrender.com/getalluser/userprofile',{userId:localStorage.getItem('id')},{headers:{
                 "Authorization":  localStorage.getItem('token')
             }})
             .then((response)=>{
@@ -143,7 +143,7 @@ export default function Newest() {
                 setuserdata(response.data.data[0])})
             .catch((err)=>{console.log('err for geting user data',err)})
 
-            axios.get('http://localhost:5000/getalluser/post', {headers:{
+            axios.get('https://socialmediabackend-v5o5.onrender.com/getalluser/post', {headers:{
                 "Authorization":  localStorage.getItem('token')
             }})
             .then((response)=>{
@@ -169,7 +169,7 @@ export default function Newest() {
                                 }} 
                                 sx={{height: 'fit-content'}}    
                             >
-                                <Avatar src={`http://localhost:5000/static/${i.userId.profileImage}`} sx={{width:'80px',height:'80px',border:'3px solid #2E7D32'}}/>
+                                <Avatar src={`https://socialmediabackend-v5o5.onrender.com/static/${i.userId.profileImage}`} sx={{width:'80px',height:'80px',border:'3px solid #2E7D32'}}/>
                             </Button>
                             <div className='card-title'>
                                 <Typography   sx={{fontSize:'19px' ,fontWeight:600}}>{i.caption}</Typography>
@@ -215,9 +215,9 @@ export default function Newest() {
                             
                                     {i.postimage.includes('.mp4')
                                     ?( <video style={{maxHeight:'416px',maxWidth:'450px'}} controls>
-                                            <source src={`http://localhost:5000/static/${i.postimage}`} type="video/mp4"/>
+                                            <source src={`https://socialmediabackend-v5o5.onrender.com/static/${i.postimage}`} type="video/mp4"/>
                                         </video>)
-                                    :(<img src={`http://localhost:5000/static/${i.postimage}`}  alt='post' style={{maxHeight:'416px',maxWidth:'450px'}}></img>)
+                                    :(<img src={`https://socialmediabackend-v5o5.onrender.com/static/${i.postimage}`}  alt='post' style={{maxHeight:'416px',maxWidth:'450px'}}></img>)
                                     }
                             
                                     { 

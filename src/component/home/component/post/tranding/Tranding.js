@@ -14,7 +14,7 @@ export default function MasonryImageList() {
 
   
   React.useEffect(()=>{
-    axios.get('http://localhost:5000/getalluser/post', {headers:{
+    axios.get('https://socialmediabackend-v5o5.onrender.com/getalluser/post', {headers:{
         "Authorization":  localStorage.getItem('token')
     }})
     .then((response)=>{
@@ -45,10 +45,10 @@ export default function MasonryImageList() {
               ?( <video 
               style={{maxHeight:'400px',maxWidth:'210px'}} 
               controls muted>
-                      <source src={`http://localhost:5000/static/${item.postimage}`} type="video/mp4"/>
+                      <source src={`https://socialmediabackend-v5o5.onrender.com/static/${item.postimage}`} type="video/mp4"/>
                   </video>)
               :( <img
-                src={`http://localhost:5000/static/${item.postimage}`}
+                src={`https://socialmediabackend-v5o5.onrender.com/static/${item.postimage}`}
               //   srcSet={`${item.img}`}
                 alt="post not available"
                 loading="lazy"
