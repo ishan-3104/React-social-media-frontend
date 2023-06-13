@@ -21,8 +21,8 @@ function App() {
     <div className='App'>
       <Provider store={store}>
         <Routes>
-          <Route path='/' element ={<LogoutProute><Welcome/></LogoutProute>}/>
-          <Route path='/signup' element={<LogoutProute><Signup/></LogoutProute>}/>
+          {/* <Route path='/' element ={<LogoutProute><Welcome/></LogoutProute>}/> */}
+          <Route path='/' element={<LogoutProute><Signup/></LogoutProute>}/>
           <Route path='/login' element={<LogoutProute><Login/></LogoutProute>}/>
           <Route path='/forgot' element={<LogoutProute><Forgotpassword/></LogoutProute>}/>
           <Route path='/home' element={<Proute><Home/></Proute>}/>
